@@ -77,3 +77,6 @@ endif
 
 # DU versions / branding
 include vendor/du/config/branding.mk
+
+# include definitions for SDCLANG
+include vendor/du/sdclang/sdclang.mk
