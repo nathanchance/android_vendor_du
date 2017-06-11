@@ -4,6 +4,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     DU-About \
+    DU-Updater \
     LatinIME \
     OmniJaws \
     OmniStyle \

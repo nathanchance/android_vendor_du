@@ -2,18 +2,14 @@
 DU_BASE_VERSION = v11.6
 
 ifndef DU_BUILD_TYPE
-    DU_BUILD_TYPE := UNOFFICIAL
+    DU_BUILD_TYPE := PERSONAL
 endif
 
-# Only include DU-Updater for official, weeklies, and rc builds
-ifeq ($(filter-out OFFICIAL WEEKLIES RC,$(DU_BUILD_TYPE)),)
-    PRODUCT_PACKAGES += \
-        DU-Updater
-endif
-
-# Sign builds if building an official or weekly build
-ifeq ($(filter-out OFFICIAL WEEKLIES,$(DU_BUILD_TYPE)),)
-    PRODUCT_DEFAULT_DEV_CERTIFICATE := ../.keys/releasekey
+# Sign personal builds
+ifneq ($(SIGN_BUILD),false)
+    ifeq ($(filter-out PERSONAL,$(DU_BUILD_TYPE)),)
+        PRODUCT_DEFAULT_DEV_CERTIFICATE := .keys/releasekey
+    endif
 endif
 
 # Set all versions
