@@ -44,6 +44,11 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
+# Themes
+PRODUCT_COPY_FILES += \
+    vendor/du/prebuilt/common/apk/Pixel.apk:system/vendor/overlay/Pixel.apk \
+    vendor/du/prebuilt/common/apk/Stock.apk:system/vendor/overlay/Stock.apk
+
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/mkshrc:system/etc/mkshrc
